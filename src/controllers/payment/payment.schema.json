@@ -1,0 +1,86 @@
+{
+  "$id": "transaccion-cobrar.schema.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "gateway_id": {
+      "$id": "/properties/gateway_id",
+      "type": "integer",
+      "title": "GateWay que se quiere usar",
+      "description": "Es el id del gateway que se quiere usar MercadoPago, SPS Decidir, etc"
+    },
+    "token_publico": {
+      "$id": "/properties/token_publico",
+      "type": "string",
+      "title": "Es el token que devuelve el gateway, luego de que el cliente llena el formulario web"
+    },
+    "cuotas": {
+      "$id": "/properties/cuotas",
+      "type": "integer",
+      "title": "Indica la cantidad de cuotas en las que se debe procesar el pago"
+    },
+    "importe_inicial": {
+      "$id": "/properties/importe_inicial",
+      "type": "number",
+      "title": "El importe inicial de la operacion sin el interes"
+    },
+    "importe_interes": {
+      "$id": "/properties/importe_interes",
+      "type": "number",
+      "title": "El importe del interes de la operacion"
+    },
+    "importe_tributo": {
+      "$id": "/properties/importe_tributo",
+      "type": "number",
+      "title": "El importe de los tributos de la operacion"
+    },
+    "importe_final": {
+      "$id": "/properties/importe_final",
+      "type": "number",
+      "title": "El importe final de la operacion"
+    },
+    "cliente": {
+      "$id": "/properties/cliente",
+      "type": "object",
+      "properties": {
+        "id": {
+          "$id": "/properties/cliente/properties/id",
+          "type": "integer",
+          "title": "Id del cliente",
+          "description": "Id del cliente dentro de la aplicacion"
+        },
+        "email": {
+          "$id": "/properties/cliente/properties/email",
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Email del cliente"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "datos": {
+      "$id": "/properties/datos",
+      "type": "object"
+    },
+    "public_token_data": {
+      "$id": "/properties/public_token_data",
+      "type": "object"
+    }
+  },
+  "required": [
+    "gateway_id",
+    "token_publico",
+    "cuotas",
+    "importe_inicial",
+    "importe_interes",
+    "importe_final",
+    "cliente",
+    "datos",
+    "public_token_data"
+  ]
+}

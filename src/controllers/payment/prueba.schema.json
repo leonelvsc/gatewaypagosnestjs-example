@@ -1,0 +1,16 @@
+{
+  "$id": "transaccion-cobrar.schema.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "hola": {
+      "$id": "/properties/token_publico",
+      "type": "number",
+      "title": "Es el token que devuelve el gateway, luego de que el cliente llena el formulario web"
+    }
+  },
+  "required": [
+    "hola"
+  ]
+}

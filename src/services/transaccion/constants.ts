@@ -1,0 +1,4 @@
+export enum TIPOS_AUTORIZACION {
+  MERCADOPAGO = 1,
+  PAYWAY = 2,
+}
